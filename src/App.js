@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import AttributesList from './components/AttributesList/AttributesList';
+import ResultRow from './components/ResultRow/ResultRow';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [selectedAttributes, setSelectedAttributes] = useState([]);
+  const [results , setResults] = useState([]);
+  console.log(selectedAttributes);
+  //get lan&lon from api
+  //builed get request for chacked attributes and lan&lon
+  //create list rows updated when sttributes change
+  
+  //create row component that get data
+  return ( 
+  <div className="app">
+      <h1>Search Service Station Nearby</h1>
+      <AttributesList selectedAttributes={selectedAttributes} setSelectedAttributes={setSelectedAttributes}/>
+      {results.length > 0 ?
+      results.map(result => <ResultRow data={result}/>): null}
     </div>
   );
 }

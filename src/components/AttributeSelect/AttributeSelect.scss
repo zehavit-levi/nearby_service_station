@@ -1,0 +1,14 @@
+.attributeSelect{
+    display: flex;
+    text-align: left;
+    .checkBox{
+        width: 15px;
+        height: 15px;
+        border: 1 solid black;
+        .checked{
+            background-color: blue;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

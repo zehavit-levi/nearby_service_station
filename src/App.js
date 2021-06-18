@@ -58,7 +58,7 @@ function App() {
         <ResultRow 
         address={res.service_station.address ? res.service_station.address : null}
         comments={res.service_station.comments ? res.service_station.comments : null}
-        activityhours={res.service_station.activity_hours ? res.service_station.activity_hours : null} />)}) : null}
+        activity_hours={res.service_station.activity_hours ? res.service_station.activity_hours : null} />)}) : null}
        </div>
     </div>
   );

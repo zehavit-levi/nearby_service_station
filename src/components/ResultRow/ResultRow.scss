@@ -1,0 +1,26 @@
+@font-face {
+    font-family: myHebfont;
+    src: url("../../assets/fonts/DanaYad/DanaYadAlefAlefAlef-Normal.woff");
+  }
+.row_container{
+    
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: myHebfont , 'Indie Flower', cursive;
+    color: black;
+    font-weight: bold;
+
+    background-image: 
+    linear-gradient(to right, #000 30%, rgba(255, 255, 255, 0) 10%);
+            background-position: bottom;
+            background-size: 10px 3px;
+            background-repeat: repeat-x;
+}
+.left.row_container {
+    background-image: 
+linear-gradient(to bottom, #000 40%, rgba(255, 255, 255, 0) 10%);
+    background-position: left;
+    background-size: 3px 10px;
+    background-repeat: repeat-y;
+}

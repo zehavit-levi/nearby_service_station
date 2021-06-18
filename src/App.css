@@ -1,5 +1,9 @@
 .app{
   text-align: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding: 40px;
+  font-family: 'Indie Flower', cursive;
+}
+.attributes_list_container{
+  padding: 10px;
+  border-bottom: 2px solid black;
 }

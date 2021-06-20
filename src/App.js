@@ -7,17 +7,14 @@ import ResultRow from './components/ResultRow/ResultRow';
 function App() {
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [results , setResults] = useState(null);
-  const [lat,setLat] = useState('');
-  const [lon,setLon] = useState('');
+  const [coords,setCoords] = useState('');
   //get lan&lon from api
   useEffect(()=>{
     function success(position) {
-      setLat(position.coords.latitude);
-      setLon(position.coords.longitude);
+      setCoords("lat=" + position.coords.latitude + '&lon=' + position.coords.longitude)
       const searchURL = "https://ravkavonline.co.il/api/pos/service-station/search/?lat=" + position.coords.latitude + '&lon=' + position.coords.longitude;
       axios.get(searchURL).then(response => {
         setResults(response.data)
-        console.log(response.data)
       });
     }
     function error() {
@@ -32,12 +29,12 @@ function App() {
  
   //builed get request for chacked attributes and lan&lon
   useEffect(()=>{
-    if (lon!=='' && lat!==''){
+    if (coords!==''){
     let searchURL="";
-    if (selectedAttributes.length > 0 && lon!=='' && lat!=='') {
-      searchURL = "https://ravkavonline.co.il/api/pos/service-station/search/?attributes="+selectedAttributes.toString() +"&lat=" + lat + '&lon=' + lon;
+    if (selectedAttributes.length > 0) {
+      searchURL = "https://ravkavonline.co.il/api/pos/service-station/search/?attributes="+selectedAttributes.toString() +"&" + coords;
   }else{
-    searchURL = "https://ravkavonline.co.il/api/pos/service-station/search/?lat=" + lat + '&lon=' + lon;
+    searchURL = "https://ravkavonline.co.il/api/pos/service-station/search/?" + coords;
   }
   axios.get(searchURL).then(response => {
     setResults(response.data)
